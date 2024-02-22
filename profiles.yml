@@ -1,0 +1,12 @@
+test_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: company-413810
+      dataset: company
+      keyfile: /Users/manthan.patil/Downloads/company-413810-98500ca83659.json
+
+
+

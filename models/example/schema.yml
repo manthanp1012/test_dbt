@@ -1,0 +1,84 @@
+
+version: 2
+
+models:
+  - name: stage_customer
+    description: "Customer Model"
+    columns:
+      - name: customer_id
+        description: "id of customer"
+        tests:
+          - not_null
+          - unique
+      - name: customer_name
+        description: "Name of customer"  
+        tests:
+          - not_null
+          - unique       
+  
+
+  - name: stage_sales
+    description: "Sales model"
+    columns:
+      - name: customer_id
+        description: "ID of customer"
+        tests:
+          - not_null
+      - name: transaction_id
+        description: "Transaction ID"
+        tests:
+          - unique
+          - not_null
+      - name: transaction_date
+        description: "Transaction date"
+        tests:
+          - not_null 
+      - name: product_id
+        description: "Product ID"
+        tests:
+          - not_null 
+      - name: product_name
+        description: "Product name"
+        tests:
+          - not_null   
+      - name: quantity
+        description: "Quantity"
+        tests:
+          - not_null 
+      - name: unit_price
+        description: "Unit Price"
+        tests:
+          - not_null  
+
+  - name: final_sales
+    description: "Sales model"
+    columns:
+      - name: transaction_date
+        description: "Date of transaction"
+        tests:
+          - not_null
+      - name: total_sales
+        description: "Sales"
+      - name: total_quantity
+        description: "Total Quantity"  
+
+  - name: final_customer
+    description: "Final Customer"
+    columns:
+      - name: total_customers
+        description: "Total Customers"
+        tests:
+          - not_null    
+
+  - name: customer_snapshot
+    description: "Customer monthly snapshot"
+    columns:
+      - name: total_customers
+        description: "Total Customers"
+        tests:
+          - not_null 
+      - name: snapshot_date
+        description: "Snapshot date"
+        tests:
+          - not_null    
+      
