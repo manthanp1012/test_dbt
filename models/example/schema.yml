@@ -69,6 +69,10 @@ models:
         description: "Total Customers"
         tests:
           - not_null    
+      - name: updated_at
+        description: "Updated at"
+        tests:
+          - not_null
 
   - name: customer_snapshot
     description: "Customer monthly snapshot"
@@ -80,5 +84,6 @@ models:
       - name: snapshot_date
         description: "Snapshot date"
         tests:
-          - not_null    
+          - not_null 
+         
       
